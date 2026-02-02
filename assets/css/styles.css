@@ -141,7 +141,7 @@ a {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-black);
-  margin-left: -1.75rem;
+  margin-left: -1rem;
 }
 
 .logo-img {
@@ -583,6 +583,14 @@ a {
 
   .menu-toggle {
     display: flex;
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+
+  .logo-img {
+    height: 60px;
   }
 
   .hero {
