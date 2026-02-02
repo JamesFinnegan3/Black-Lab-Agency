@@ -871,8 +871,8 @@ a {
     }
   }
 
-  /* Logo - Invert colors for dark mode */
+  /* Logo - Update SVG colors for dark mode */
   .logo-img {
-    filter: invert(1);
+    filter: brightness(0) invert(1);
   }
 }
