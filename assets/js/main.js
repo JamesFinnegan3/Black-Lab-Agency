@@ -80,36 +80,59 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Intersection Observer for fade-in animations
+  // Intersection Observer for scroll animations
   const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
   };
 
-  const observer = new IntersectionObserver(function(entries) {
+  const scrollObserver = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in-up');
-        observer.unobserve(entry.target);
+        entry.target.classList.add('visible');
+        // Keep observing to allow re-animation if user scrolls back up
       }
     });
   }, observerOptions);
 
-  // Observe sections for animation
-  const sections = document.querySelectorAll('.section, .case-study, .card');
-  sections.forEach(section => {
-    observer.observe(section);
+  // Observe all elements with scroll animation classes
+  const animatedElements = document.querySelectorAll('.scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-scale-in');
+  animatedElements.forEach(element => {
+    scrollObserver.observe(element);
   });
 
-  // Card hover effects
+  // Parallax effect for hero section
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const heroContent = hero.querySelector('.hero-content');
+      if (heroContent && scrolled < window.innerHeight) {
+        heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+        heroContent.style.opacity = 1 - (scrolled / 800);
+      }
+    });
+  }
+
+  // 3D tilt effect for cards on mouse move
   const cards = document.querySelectorAll('.card');
   cards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateY(-8px)';
+    card.addEventListener('mousemove', function(e) {
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = (y - centerY) / 10;
+      const rotateY = (centerX - x) / 10;
+
+      this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px) scale(1.02)`;
     });
 
     card.addEventListener('mouseleave', function() {
-      this.style.transform = 'translateY(0)';
+      this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
     });
   });
 
