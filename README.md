@@ -64,19 +64,17 @@ Black-Lab-Agency/
 
 ## Setup Instructions
 
-### 1. Add Your Logos
+### 1. Add Your Logo
 
-Replace the placeholder logo with your actual Black Lab Agency logos:
+**IMPORTANT:** Your website is configured to use your black lab profile image.
 
-```
-assets/images/logo.svg          # Main logo for header
-```
+**Required:**
+- Save your black lab profile image (the detailed side profile silhouette) as `logo.png`
+- Place it in: `assets/images/logo.png`
+- Recommended size: 400px height (width auto-scales)
+- Format: PNG with transparent or white background
 
-You provided two logo variations:
-- Black lab profile (simple)
-- Black lab with "BLACK LAB AGENCY" text
-
-Save these as SVG files in the `assets/images/` directory.
+**See LOGO-INSTRUCTIONS.md for detailed setup instructions.**
 
 ### 2. Configure Calendly Integration
 

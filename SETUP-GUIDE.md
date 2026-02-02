@@ -4,25 +4,25 @@
 
 Your new Black Lab Agency website is ready! Follow these steps to complete the setup.
 
-## Step 1: Replace Your Logos
+## Step 1: Add Your Black Lab Profile Logo
 
-You provided two beautiful black lab logos. Here's how to add them:
+**Your website is ready for your logo image!**
 
-### Option A: Use Your Provided Logos
-1. Save the black lab profile logo as `logo.svg` in `assets/images/`
-2. Save the black lab with text logo as `logo-full.svg` in `assets/images/`
+### What You Need to Do:
 
-### Option B: Use Different Formats
-If you have PNG or JPG versions:
-1. Save your logo as `logo.png` or `logo.jpg` in `assets/images/`
-2. Update the image reference in all HTML files:
-   ```html
-   <!-- Change this: -->
-   <img src="assets/images/logo.svg" alt="Black Lab Agency" class="logo-img">
+1. **Save your black lab profile image** (the beautiful side profile silhouette you showed me)
+2. **Name it:** `logo.png`
+3. **Place it in:** `assets/images/logo.png`
 
-   <!-- To this: -->
-   <img src="assets/images/logo.png" alt="Black Lab Agency" class="logo-img">
-   ```
+### Image Specifications:
+- **Recommended size:** 400px height (width will auto-scale)
+- **Format:** PNG (preferred with transparent background) or JPG
+- **The image:** Your black lab profile silhouette with the detailed artistic rendering
+
+### That's it!
+The website is already configured to display your logo. Just drop the file in the right location.
+
+**For detailed instructions, see LOGO-INSTRUCTIONS.md**
 
 ## Step 2: Configure Calendly
 
