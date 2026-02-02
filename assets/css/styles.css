@@ -121,6 +121,7 @@ a {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-gray-200);
   transition: var(--transition-smooth);
+  overflow: visible;
 }
 
 .header.scrolled {
@@ -131,7 +132,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
+  min-height: 90px;
 }
 
 .logo {
@@ -141,12 +143,14 @@ a {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-black);
-  margin-left: -1rem;
+  margin-left: 0;
 }
 
 .logo-img {
   height: 70px;
   width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .nav-menu {
@@ -698,6 +702,11 @@ a {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .nav {
+    padding: 0.75rem 0;
+    min-height: 80px;
+  }
+
   .nav-menu {
     display: none;
     position: absolute;
