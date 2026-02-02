@@ -191,6 +191,7 @@ Contact Black Lab Agency for customization or technical support.
 - [ ] Calendly link updated in all 5 HTML files
 - [ ] Tested all pages on desktop
 - [ ] Tested all pages on mobile (or resized browser)
+- [ ] Tested dark mode (change system appearance settings)
 - [ ] All CTAs open Calendly correctly
 - [ ] Analytics tracking code added
 - [ ] Custom domain configured (if applicable)
@@ -203,6 +204,7 @@ Contact Black Lab Agency for customization or technical support.
 
 ✅ 5 fully responsive HTML pages
 ✅ Modern, conversion-focused design
+✅ **Automatic dark mode** - detects system preferences
 ✅ Calendly integration throughout
 ✅ Mobile-responsive navigation
 ✅ Smooth scroll animations

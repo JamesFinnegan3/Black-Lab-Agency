@@ -6,6 +6,7 @@ A modern, sleek agency website built for Black Lab Agency - full-service adverti
 
 This website features a clean, conversion-focused design with:
 - Modern black, white, and gray color scheme
+- **Automatic dark mode support** - detects user's system preference and switches color scheme
 - Responsive design that works on all devices
 - Multiple category-specific pages
 - Integrated Calendly booking system
@@ -138,6 +139,10 @@ Add your analytics tracking code (Google Analytics, Facebook Pixel, etc.) before
 
 ### Design Features
 - Clean, modern aesthetic inspired by top agency websites
+- **Automatic dark mode** - responds to system preferences (light/dark mode)
+  - Light mode: White background with black text
+  - Dark mode: Black background with white text
+  - No manual toggle needed - seamless system integration
 - Smooth scroll animations
 - Hover effects on cards and buttons
 - Mobile-responsive navigation
@@ -153,6 +158,7 @@ Add your analytics tracking code (Google Analytics, Facebook Pixel, etc.) before
 ### Technical Features
 - Vanilla JavaScript (no framework dependencies)
 - CSS custom properties for easy theming
+- Automatic dark mode using `prefers-color-scheme` media query
 - Intersection Observer for scroll animations
 - Mobile-first responsive design
 - Cross-browser compatible
