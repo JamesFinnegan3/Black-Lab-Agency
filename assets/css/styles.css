@@ -130,11 +130,10 @@ a {
 
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 1rem 0;
   min-height: 90px;
-  position: relative;
 }
 
 .logo {
@@ -144,8 +143,10 @@ a {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-black);
-  position: absolute;
+  position: fixed;
   left: var(--spacing-md);
+  top: 1rem;
+  z-index: 1001;
 }
 
 .logo-img {
