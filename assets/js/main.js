@@ -54,6 +54,108 @@ document.addEventListener('DOMContentLoaded', function() {
     lastScroll = currentScroll;
   });
 
+  // Hero floating shapes
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    const shapesContainer = document.createElement('div');
+    shapesContainer.className = 'floating-shapes';
+    shapesContainer.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; overflow: hidden;';
+    hero.appendChild(shapesContainer);
+
+    // Create floating geometric shapes
+    for (let i = 0; i < 20; i++) {
+      const shape = document.createElement('div');
+      const size = Math.random() * 100 + 30;
+      const duration = Math.random() * 20 + 15;
+      const delay = Math.random() * -20;
+      const startX = Math.random() * 100;
+      const shapes = ['circle', 'square', 'triangle'];
+      const shapeType = shapes[Math.floor(Math.random() * shapes.length)];
+
+      shape.style.cssText = `
+        position: absolute;
+        width: ${size}px;
+        height: ${size}px;
+        left: ${startX}%;
+        top: ${Math.random() * 100}%;
+        opacity: ${Math.random() * 0.15 + 0.05};
+        animation: floatShape ${duration}s ease-in-out infinite;
+        animation-delay: ${delay}s;
+      `;
+
+      if (shapeType === 'circle') {
+        shape.style.borderRadius = '50%';
+        shape.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+      } else if (shapeType === 'square') {
+        shape.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+        shape.style.transform = `rotate(${Math.random() * 360}deg)`;
+      } else {
+        shape.style.width = '0';
+        shape.style.height = '0';
+        shape.style.borderLeft = `${size/2}px solid transparent`;
+        shape.style.borderRight = `${size/2}px solid transparent`;
+        shape.style.borderBottom = `${size}px solid rgba(255, 255, 255, 0.1)`;
+      }
+
+      shapesContainer.appendChild(shape);
+    }
+
+    // Mouse parallax effect on hero title
+    const heroTitle = hero.querySelector('h1');
+    if (heroTitle) {
+      hero.addEventListener('mousemove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        heroTitle.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+
+        if (shapesContainer) {
+          shapesContainer.style.transform = `translate(${x * 30}px, ${y * 30}px)`;
+        }
+      });
+
+      hero.addEventListener('mouseleave', () => {
+        heroTitle.style.transform = 'translate(0, 0)';
+        if (shapesContainer) {
+          shapesContainer.style.transform = 'translate(0, 0)';
+        }
+      });
+    }
+  }
+
+  // Category list dropdown functionality
+  const categoryItems = document.querySelectorAll('.category-item');
+
+  categoryItems.forEach(item => {
+    const header = item.querySelector('.category-header');
+    const toggle = item.querySelector('.category-toggle');
+    const url = item.getAttribute('data-url');
+
+    // Toggle dropdown when clicking the toggle button
+    toggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+
+      // Close other open categories (accordion behavior)
+      categoryItems.forEach(otherItem => {
+        if (otherItem !== item && otherItem.classList.contains('active')) {
+          otherItem.classList.remove('active');
+        }
+      });
+
+      // Toggle current category
+      item.classList.toggle('active');
+    });
+
+    // Navigate to page when clicking the header (but not the toggle button)
+    header.addEventListener('click', function(e) {
+      // Only navigate if we didn't click on the toggle button
+      if (!toggle.contains(e.target) && url) {
+        window.location.href = url;
+      }
+    });
+  });
+
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

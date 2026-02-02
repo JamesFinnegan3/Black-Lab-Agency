@@ -9,7 +9,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/vrq0bim.css">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -46,11 +47,6 @@
     <div class="container">
       <div class="hero-content fade-in-up">
         <h1>Black Lab Agency</h1>
-        <p class="hero-subtitle">Full-service advertising built for businesses that want measurable growth.</p>
-        <p class="hero-description">
-          We run paid acquisition, creative, landing pages, and conversion systems for four business models:
-          local service businesses, e-commerce brands, online coaches/service providers, and regulated categories.
-        </p>
         <div class="hero-cta">
           <a href="javascript:void(0)" class="btn btn-primary btn-large" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/james-blacklabagency/intro-call'});return false;">Book a Call</a>
           <a href="#categories" class="btn btn-secondary btn-large">See Your Category</a>
@@ -64,33 +60,82 @@
     <div class="container">
       <div class="section-header scroll-fade-in">
         <h1>What type of company are you?</h1>
-        <p>Choose the page built for your business</p>
+        <h2>We have unique offers built for every type of business</h2>
+        <p>Choose your business type</p>
       </div>
 
-      <div class="card-grid">
-        <a href="local-services.html" class="card scroll-scale-in">
-          <div class="card-icon">🏠</div>
-          <h3>Local Services</h3>
-          <p>Home services, spas/salons, professional services, restaurants, and local businesses.</p>
-        </a>
+      <div class="category-list">
+        <div class="category-item scroll-fade-in" data-url="local-services.html">
+          <div class="category-header">
+            <div class="category-title">
+              <span class="category-icon">🏠</span>
+              <h3>Local Services</h3>
+            </div>
+            <button class="category-toggle" aria-label="Toggle details">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </div>
+          <div class="category-content">
+            <p>Home services, spas/salons, professional services, restaurants, and local businesses.</p>
+            <a href="local-services.html" class="btn btn-primary">See Your Offer</a>
+          </div>
+        </div>
 
-        <a href="ecommerce.html" class="card scroll-scale-in">
-          <div class="card-icon">🛍️</div>
-          <h3>E-commerce and Online Brands</h3>
-          <p>Product brands selling online and looking to scale with paid advertising.</p>
-        </a>
+        <div class="category-item scroll-fade-in" data-url="ecommerce.html">
+          <div class="category-header">
+            <div class="category-title">
+              <span class="category-icon">🛍️</span>
+              <h3>E-commerce and Online Brands</h3>
+            </div>
+            <button class="category-toggle" aria-label="Toggle details">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </div>
+          <div class="category-content">
+            <p>Product brands selling online and looking to scale with paid advertising.</p>
+            <a href="ecommerce.html" class="btn btn-primary">See Your Offer</a>
+          </div>
+        </div>
 
-        <a href="coaches-creators.html" class="card scroll-scale-in">
-          <div class="card-icon">💼</div>
-          <h3>Online Coaches, Creators and Agencies</h3>
-          <p>Service providers, consultants, and experts selling through booked calls.</p>
-        </a>
+        <div class="category-item scroll-fade-in" data-url="coaches-creators.html">
+          <div class="category-header">
+            <div class="category-title">
+              <span class="category-icon">💼</span>
+              <h3>Online Coaches, Creators and Agencies</h3>
+            </div>
+            <button class="category-toggle" aria-label="Toggle details">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </div>
+          <div class="category-content">
+            <p>Service providers, consultants, and experts selling through booked calls.</p>
+            <a href="coaches-creators.html" class="btn btn-primary">See Your Offer</a>
+          </div>
+        </div>
 
-        <a href="regulated-products.html" class="card scroll-scale-in">
-          <div class="card-icon">⚖️</div>
-          <h3>Regulated/Policy-Sensitive Products</h3>
-          <p>Products in regulated categories that need compliant advertising infrastructure.</p>
-        </a>
+        <div class="category-item scroll-fade-in" data-url="regulated-products.html">
+          <div class="category-header">
+            <div class="category-title">
+              <span class="category-icon">⚖️</span>
+              <h3>Regulated/Policy-Sensitive Products</h3>
+            </div>
+            <button class="category-toggle" aria-label="Toggle details">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </div>
+          <div class="category-content">
+            <p>Products in regulated categories that need compliant advertising infrastructure.</p>
+            <a href="regulated-products.html" class="btn btn-primary">See Your Offer</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -99,7 +144,7 @@
   <section id="services" class="section section-gray">
     <div class="container">
       <div class="section-header scroll-fade-in">
-        <h2>What we do</h2>
+        <h2>What We Do</h2>
       </div>
 
       <ul class="feature-list">
