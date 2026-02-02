@@ -131,7 +131,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  margin: 0 -1rem;
 }
 
 .logo {
@@ -141,7 +142,6 @@ a {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-black);
-  margin-left: -1rem;
 }
 
 .logo-img {
@@ -585,8 +585,9 @@ a {
     display: flex;
   }
 
-  .logo {
-    margin-left: 0;
+  .nav {
+    padding: 0.5rem 0.75rem;
+    margin: 0 -0.75rem;
   }
 
   .logo-img {
