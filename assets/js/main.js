@@ -54,26 +54,26 @@ document.addEventListener('DOMContentLoaded', function() {
     lastScroll = currentScroll;
   });
 
-  // Category list dropdown functionality
-  const categoryItems = document.querySelectorAll('.category-item');
+  // Industry list dropdown functionality
+  const industryItems = document.querySelectorAll('.industry-item');
 
-  categoryItems.forEach(item => {
-    const header = item.querySelector('.category-header');
-    const toggle = item.querySelector('.category-toggle');
+  industryItems.forEach(item => {
+    const header = item.querySelector('.industry-header');
+    const toggle = item.querySelector('.industry-toggle');
     const url = item.getAttribute('data-url');
 
     // Toggle dropdown when clicking the toggle button
     toggle.addEventListener('click', function(e) {
       e.stopPropagation();
 
-      // Close other open categories (accordion behavior)
-      categoryItems.forEach(otherItem => {
+      // Close other open industries (accordion behavior)
+      industryItems.forEach(otherItem => {
         if (otherItem !== item && otherItem.classList.contains('active')) {
           otherItem.classList.remove('active');
         }
       });
 
-      // Toggle current category
+      // Toggle current industry
       item.classList.toggle('active');
     });
 
