@@ -169,6 +169,7 @@ a {
 
 .logo-dark {
   display: none;
+  height: 85px;
 }
 
 .nav-menu {
@@ -861,6 +862,10 @@ a {
 
   .logo-img {
     height: 60px;
+  }
+
+  .logo-dark {
+    height: 72px;
   }
 
   .hero {
