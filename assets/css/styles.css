@@ -162,6 +162,15 @@ a {
   width: auto;
 }
 
+/* Show light logo, hide dark logo in light mode */
+.logo-light {
+  display: block;
+}
+
+.logo-dark {
+  display: none;
+}
+
 .nav-menu {
   display: flex;
   list-style: none;
@@ -1311,8 +1320,12 @@ a {
     }
   }
 
-  /* Logo - Update SVG colors for dark mode */
-  .logo-img {
-    filter: brightness(0) invert(1);
+  /* Logo - Switch to white logo in dark mode */
+  .logo-light {
+    display: none;
+  }
+
+  .logo-dark {
+    display: block;
   }
 }
