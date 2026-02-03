@@ -84,15 +84,6 @@ h1 {
   margin-right: auto;
   margin-bottom: var(--spacing-lg);
   text-transform: uppercase;
-  color: #ffffff;
-  text-shadow:
-    0 0 40px rgba(255, 255, 255, 0.3),
-    0 0 80px rgba(255, 255, 255, 0.2),
-    0 0 120px rgba(255, 255, 255, 0.1);
-  animation: titleGlow 4s ease-in-out infinite;
-  position: relative;
-  transition: transform 0.3s ease-out;
-  will-change: transform;
 }
 
 h2 {
@@ -273,9 +264,7 @@ a {
   justify-content: center;
   text-align: center;
   padding: var(--spacing-2xl) 0 var(--spacing-xl);
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
-  background-size: 200% 200%;
-  animation: gradientShift 15s ease infinite;
+  background: linear-gradient(135deg, var(--color-gray-100) 0%, var(--color-white) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -284,37 +273,34 @@ a {
 .hero::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background:
-    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
-  animation: pulseGlow 8s ease-in-out infinite;
-  z-index: 1;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 20s ease-in-out infinite;
+  z-index: 0;
   pointer-events: none;
 }
 
 .hero::after {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+  bottom: -20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.04) 0%, transparent 70%);
   border-radius: 50%;
-  animation: breathe 6s ease-in-out infinite;
-  z-index: 1;
+  animation: float 25s ease-in-out infinite reverse;
+  z-index: 0;
   pointer-events: none;
 }
 
 .hero-content {
   position: relative;
-  z-index: 10;
+  z-index: 1;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -345,41 +331,6 @@ a {
   justify-content: center;
   flex-wrap: wrap;
   margin-top: var(--spacing-lg);
-}
-
-.hero .btn-primary {
-  background: #ffffff;
-  color: #0a0a0a;
-  border: 2px solid #ffffff;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero .btn-primary:hover {
-  background: transparent;
-  color: #ffffff;
-  box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
-  transform: translateY(-4px) scale(1.05);
-}
-
-.hero .btn-secondary {
-  background: transparent;
-  color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #ffffff;
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
-  transform: translateY(-4px) scale(1.05);
-}
-
-.floating-shapes {
-  transition: transform 0.3s ease-out;
-  will-change: transform;
 }
 
 /* Sections */
@@ -998,65 +949,6 @@ a {
   to {
     opacity: 1;
     transform: scale(1);
-  }
-}
-
-@keyframes gradientShift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes breathe {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.1);
-    opacity: 0.8;
-  }
-}
-
-@keyframes titleGlow {
-  0%, 100% {
-    text-shadow:
-      0 0 40px rgba(255, 255, 255, 0.3),
-      0 0 80px rgba(255, 255, 255, 0.2),
-      0 0 120px rgba(255, 255, 255, 0.1);
-  }
-  50% {
-    text-shadow:
-      0 0 50px rgba(255, 255, 255, 0.4),
-      0 0 100px rgba(255, 255, 255, 0.3),
-      0 0 150px rgba(255, 255, 255, 0.2);
-  }
-}
-
-@keyframes floatShape {
-  0%, 100% {
-    transform: translateY(0) translateX(0) rotate(0deg);
-  }
-  25% {
-    transform: translateY(-100px) translateX(50px) rotate(90deg);
-  }
-  50% {
-    transform: translateY(-50px) translateX(-30px) rotate(180deg);
-  }
-  75% {
-    transform: translateY(-120px) translateX(20px) rotate(270deg);
   }
 }
 
