@@ -372,6 +372,10 @@ a {
   color: var(--color-gray-300);
 }
 
+.section-dark .case-study-result-text {
+  color: var(--color-white);
+}
+
 /* Dot pattern background */
 .section-gray {
   background-color: var(--color-gray-100);
@@ -750,6 +754,45 @@ a {
 .stat-label {
   font-size: 1rem;
   color: var(--color-gray-600);
+}
+
+.case-study-list {
+  margin-top: var(--spacing-md);
+}
+
+.case-study-list-item {
+  margin-bottom: var(--spacing-sm);
+}
+
+.case-study-emphasis {
+  margin-top: var(--spacing-md);
+  font-weight: 600;
+}
+
+.case-study-result-text {
+  margin-top: var(--spacing-lg);
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.case-study-highlight-box {
+  background: var(--color-gray-100);
+  padding: var(--spacing-lg);
+  border-radius: 12px;
+  margin-top: var(--spacing-lg);
+}
+
+.case-study-highlight-box h4 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.case-study-highlight-box p {
+  font-size: 1.125rem;
+}
+
+.intro-text {
+  max-width: 700px;
+  margin: 0 auto var(--spacing-lg);
 }
 
 /* Footer */
@@ -1266,6 +1309,20 @@ a {
   .case-study {
     background: #1a1a1a;
     border-color: #2a2a2a;
+  }
+
+  .case-study h1,
+  .case-study h2,
+  .case-study h3,
+  .case-study h4,
+  .case-study h5,
+  .case-study h6 {
+    color: #f8f7f5;
+  }
+
+  .case-study p,
+  .case-study li {
+    color: #d4d4d4;
   }
 
   .stat-value {
